@@ -1,0 +1,312 @@
+$primary-color: rgb(13, 111, 240); // azul brillante
+$secondary-color:#0000ff; // azul neón
+$background-gradient: linear-gradient(135deg, #000000, #464446); // Fondo degradado
+$text-color: #ffffff; // Blanco suave
+$font-family: 'Roboto Mono', monospace; // Tipografía futurista
+$transition: 0.3s ease-in-out; // Transiciones suaves
+
+
+.main-header {
+    background: $background-gradient;
+    padding: 1rem 0;
+    text-align: center;
+
+    h1 {
+        color: $primary-color;
+        font-size: 2.5rem;
+        justify-content: center;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+
+        li {
+            margin: 0 1rem;
+
+            a {
+                text-decoration: none;
+                color: $text-color;
+                font-weight: bold;
+                transition: $transition;
+
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.main-header img{
+    float: left;
+   
+    margin-top: 20px;
+    width: 100px;
+}
+
+.hero {
+    background: $background-gradient;
+    text-align: center;
+    padding: 3rem 1rem;
+    color: $text-color;
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .btn {
+        background: $primary-color;
+        color: $background-gradient;
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+            background: $secondary-color;
+            color: $text-color;
+        }
+    }
+}
+
+
+
+// Estilo global
+body {
+    font-family: $font-family;
+    margin: 0;
+    background: $background-gradient;
+    color: $text-color;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menu, .about{
+    text-align: center;
+    padding: 2rem 1rem;
+
+    h2 {
+        font-size: 2rem;
+        color: $primary-color;
+    }
+
+    ul, p, form {
+        font-size: 1.2rem;
+        color: $text-color;
+    }
+
+    form button {
+        background: $secondary-color;
+        color: $text-color;
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+            background: $primary-color;
+        }
+    }
+}
+
+
+.main-contact{
+   display: flex;
+   justify-content: center;
+}
+.contact{
+        
+        border: 1px solid black;
+        width: 400px;
+        height: 500px;
+        background: url(/img/futurista.webp);
+        color: #e0e0e0;
+        border-radius: 20px;
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.75);
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        
+    form{
+        display: block;
+        box-sizing: border-box;
+        padding: 40px;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: brightness(40%);
+        flex-direction: column;
+        display: flex;
+        gap: 5px;
+    }
+    
+    h2{
+        font-weight: normal;
+        font-size: 24px;
+        text-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+        margin-bottom: 60px;
+    }
+
+    label{
+        color: rgba(255, 255, 255, 0.8);
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 2px;
+        padding-left: 10px;
+    }
+
+    input{
+        background: rgba(255, 255, 255, 0.3);
+        height: 40px;
+        line-height: 40px;
+        border-radius: 20px;
+        padding: 0px 20px;
+        border: none;
+    }
+
+    button{
+        background: rgb(13, 111, 240);
+        height: 40px;
+        line-height: 40px;
+        border-radius: 40px;
+        border: none;
+        margin: 10px 0px;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+        color: #e0e0e0;
+        cursor: pointer;
+    }   
+
+    button:hover{
+        
+        background: #0000ff;       
+    }
+}
+
+.gallery-images{
+  display: flex;
+  gap: 20px;
+  animation: scrollImages 18s linear infinite;
+}
+
+.gallery-images img{
+  object-fit: cover;
+  max-width:250px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-footer{
+    display: flex;
+    
+}
+
+@keyframes scrollImages {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 800px) {
+  .main-header nav ul {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .main-header img{
+    width: 70px;
+  }
+
+  .main-header nav li {
+    margin: 10px 0;
+  }
+
+  header {
+    padding: 15px;
+  }
+
+  .gallery-images img{
+    width: 150px;
+    height: 150px;
+  }
+
+  .main-header h1 {
+    font-size: 2rem; 
+  }
+
+  .team img{
+    width: 200px;
+  }
+
+  .gallery-images{
+    text-align: center; 
+  }
+
+  .gallery-images img{
+    width: 120px;
+    padding: 15px;
+  }
+
+  .hero {
+    padding: 15px;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+
+    .main-header h1 {
+    font-size: 1.5rem; 
+  }
+
+  .main-header img{
+    width: 70px;
+  }
+
+  .gallery-images{
+    text-align: center; 
+  }
+
+  .gallery-images img{
+    width: 120px;
+    padding: 10px;
+  }
+
+  .main-header nav a {
+    font-size: 1rem; 
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+
+  .retro-main {
+    padding: 10px;
+  }
+
+  
+}
+
+  
